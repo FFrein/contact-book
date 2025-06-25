@@ -1,0 +1,54 @@
+@use 'variables';
+
+.header{
+    max-width: variables.$max-element-width;
+    height: 70px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+    @media (max-width: 1200px) {
+        max-width: variables.$max-element-width_notebook;
+    }
+    @media (max-width: 992px) {
+        max-width: variables.$max-element-width_tablet;
+    }
+    @media (max-width: 768px) {
+        max-width: variables.$max-element-width_phone;
+    }
+    
+    &__wrapper{
+        background-color: #FFFFFF;
+        max-width: 100%;
+        height: 70px;
+    }
+
+    &__nav{
+        display: flex;
+        gap:16px;
+
+        .btn_contacts{
+            @media (max-width: 768px) {
+                display: none;
+            }
+        }
+    }
+
+    &__logo{
+        display: flex;
+        flex-direction: row;
+        align-content: baseline;
+
+        p{
+            color: variables.$blue;
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 120%;
+            letter-spacing: 0%;
+            margin-left: 16px;
+            padding-top: 3px;
+        }
+    }
+}

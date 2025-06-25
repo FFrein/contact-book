@@ -1,0 +1,139 @@
+@use 'variables';
+
+.contacts{
+    &___wrapper{
+        max-width: variables.$max-element-width;
+        margin: auto;
+        margin-top: 56px;
+        @media (max-width: 1200px) {
+            max-width: variables.$max-element-width_notebook;
+        }
+
+        @media (max-width: 992px) {
+            max-width: variables.$max-element-width_tablet;
+        }
+
+        @media (max-width: 768px) {
+            max-width: variables.$max-element-width_phone;
+        }
+    }
+    &__buttons{
+       display: flex;
+       padding: 24px;
+       justify-content: end;
+    }
+}
+
+.contact_list_empty{
+    opacity: 0.3;
+    margin-top: 25%;
+    text-align: center;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 130%;
+    letter-spacing: 0px;
+}
+
+.contact-block{
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    margin-bottom: 24px;
+    padding: 24px;
+
+    box-shadow: 0px 4px 20px 0px #0000000D;
+    
+    &__header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        h4{
+            &.Active{
+                color: variables.$blue;
+                transition: 0.3s;
+            }
+            transition: 0.3s;
+        }
+    }
+
+    &__no-contacts{
+        text-align: center;
+        display: flex;
+        flex-direction: row;
+        list-style: none;
+        padding: 24px 0;
+        border-top: solid 1px #0000001f;
+    }
+
+    h4{
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 120%;
+        letter-spacing: 0px;
+    }
+
+    &__items {
+        opacity: 0;
+        margin-top: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+
+        .contact-block__item{
+            display: none;
+        }
+    }
+
+    &__items.visible {
+        opacity: 1;
+        margin-top: 24px;
+
+        .contact-block__item{
+            display: flex;
+        }
+    }
+
+    &__item{
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        list-style: none;
+        padding: 24px 0;
+        border-top: solid 1px #0000001f;
+
+        @media(max-width:768px){
+            flex-direction: column;
+            align-items: start;
+        }
+
+        &:last-child{
+            padding: 24px 0 0 0;
+        }
+
+        p{
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 120%;
+            letter-spacing: 0px;
+            margin-right: 34px;
+        }
+        
+        &_block{
+            align-items: center;
+            display: flex;
+            flex-direction: row;
+        }
+        &_buttons{
+            display: flex;
+            flex-direction: row;
+            gap:8px;
+        }
+    }
+}
+
+.edit_inputs{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+    padding: 0 2px;
+}
