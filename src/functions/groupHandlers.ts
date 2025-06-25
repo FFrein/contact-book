@@ -34,7 +34,7 @@ export function handleDeleteGroup(e: MouseEvent): void {
         const groupName = groupDiv?.querySelector("p")?.innerText;
         if(groupName){
             DataStorage.deleteGroupByName(groupName)
-            showToast("Группа удалена", "#005BFE", "white");
+            showToast("✅ Группа удалена");
         }
     }
 }
@@ -57,10 +57,10 @@ export function handleSaveGroups(): boolean {
             if(errorBlock){
                 errorBlock.classList.add("visible");
                 if(name.length <= 0){
-                    showToast("Неверно заполенны поля", "red", "black");     
+                    showToast("Неверно заполенны поля");     
                     errorBlock.innerText = "Поле не должно быть пустым";
                 }else{
-                    showToast("Названия должны быть уникальынми", "red", "black");   
+                    showToast("Названия должны быть уникальынми");   
                     errorBlock.innerText = "Название должно быть уникальным";
                 }
             }
@@ -76,7 +76,7 @@ export function handleSaveGroups(): boolean {
 
     if (!hasError) {
         DataStorage.saveGroups(updateGroups)
-        showToast("Группы доабвлены", "#005BFE", "white");
+        showToast("✅ Группы добавлены");
         return true;
     }
     else{

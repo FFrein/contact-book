@@ -1,7 +1,7 @@
 import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
 
-export function showToast(message: string, bgColor:string = "#ffffff", textColor:string = "#000000"): void {
+export function showToast(message: string, bgColor:string = "white", textColor:string = "black"): void {
   Toastify({
     text: message,
     duration: 3000,
@@ -11,6 +11,7 @@ export function showToast(message: string, bgColor:string = "#ffffff", textColor
     style: {
       color: textColor,
       background:bgColor,
+      borderRadius:"6px",
     }
   }).showToast();
 }

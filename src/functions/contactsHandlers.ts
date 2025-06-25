@@ -32,7 +32,7 @@ export function handleSaveContact(currentEditingContactPhone?:string): void {
         const isPhoneValid = phone.value.length === 16;
 
         if(!isFIOValid || !isGroupValid || !isPhoneValid) {
-            showToast("Заполнены не все поля или телефон введён некорректно", "red", "black");
+            showToast("Заполнены не все поля или телефон введён некорректно");
             return;
         }
 
@@ -40,7 +40,7 @@ export function handleSaveContact(currentEditingContactPhone?:string): void {
             if(phone.value !== currentEditingContactPhone) {
                 const phoneExists = contacts.some(c => c.phone === phone.value);
                 if(phoneExists) {
-                    showToast("Данный номер телефона уже используется", "red", "black");
+                    showToast("Данный номер телефона уже используется");
                     return;
                 }
             }
@@ -50,19 +50,19 @@ export function handleSaveContact(currentEditingContactPhone?:string): void {
                 new Contact(phone.value, FIO.value, groupInput.value)
             );
 
-            showToast("Контакт изменён", "#005BFE", "white");
+            showToast("✅ Контакт изменён");
         } else {
             const isUnique = !contacts.some(e => e.phone === phone.value);
 
             if(!isUnique) {
-                showToast("Данный номер телефона уже используется", "red", "black");
+                showToast("Данный номер телефона уже используется");
                 return;
             }
 
             contacts.push(new Contact(phone.value, FIO.value, groupInput.value));
             DataStorage.saveContacts(contacts);
 
-            showToast("Контакт создан", "#005BFE", "white");
+            showToast("✅ Контакт создан");
         }
 
         groupInput.value = "";
@@ -83,7 +83,7 @@ export function handleSelectGroup(name:string, dropdownId:string):void{
 export function handleDeleteContact(phone:string):void{
     DataStorage.deleteContactByPhone(phone);
     document.getElementById(`number_${phone}`)?.remove();
-    showToast("Контакт удалён","#005BFE","white");
+    showToast("✅ Контакт удалён");
     renderContacts();
 }
 
