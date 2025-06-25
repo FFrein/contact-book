@@ -26,7 +26,7 @@ export function groupValidator(group: HTMLDivElement,input: HTMLInputElement, er
     function validate(): boolean {
         const value = input.value.trim();
         if (value.length === 0) {
-            error.textContent = "Поле являеться обязательным";
+            error.textContent = "Поле является обязательным";
             group.classList.add("input-error");
             return false;
         }
@@ -43,7 +43,7 @@ export function fioValidator(input: HTMLInputElement, error?: HTMLParagraphEleme
     function validate(): boolean {
         const value = input.value.trim();
         if (value.length === 0) {
-            if(error) error.textContent = "Поле являеться обязательным";
+            if(error) error.textContent = "Поле является обязательным";
             input.classList.add("input-error");
             return false;
         }
