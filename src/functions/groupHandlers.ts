@@ -9,7 +9,7 @@ export function handleAddGroup(list: HTMLElement | null): void {
         list.insertAdjacentHTML("beforeend",`
                 <div class="group__item_new">  
                     <div class="group__item">
-                        <input class="group__item_new__text placeholder="Введите название"/>
+                        <input class="group__item_new__text" placeholder="Введите название"/>
                         <button id="delete_${itemId}" class="btnDeleteGroup btn_delete">
                             <img src="/trash_gray.svg" alt="delete"/>
                         </button>
