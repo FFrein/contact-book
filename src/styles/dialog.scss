@@ -7,10 +7,10 @@
     width: 312px;
     height: 100vh;
     max-height: 100vh;
-    background-color: white;
     flex-direction: column;
 
     &__wrapper {
+        background-color: white;
         position: fixed;
         display: flex;
         flex-direction: column;
