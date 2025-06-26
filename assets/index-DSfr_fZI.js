@@ -84,7 +84,7 @@ var Et=Object.defineProperty;var Ct=(r,t,e)=>t in r?Et(r,t,{enumerable:!0,config
                 `,(e=o.querySelector("#btn_delete"))==null||e.addEventListener("click",()=>{ee(u.phone)}),(s=o.querySelector("#btn_edit"))==null||s.addEventListener("click",()=>{se(`number_${u.phone}`)}),n==null||n.appendChild(o)}t.appendChild(a),a==null||a.addEventListener("click",()=>{var u;if(n){ae(n);const o=document==null?void 0:document.getElementById(`div-${i.name}`),l=o==null?void 0:o.querySelector("img");l&&(ct(l,180),(u=o==null?void 0:o.querySelector("h4"))==null||u.classList.toggle("Active"))}})}}}function ae(r){r.classList.contains("visible")?(r.style.maxHeight=r.scrollHeight+"px",requestAnimationFrame(()=>{r.style.maxHeight="0",r.style.opacity="0",r.style.marginTop="0"}),r.classList.remove("visible")):(r.style.maxHeight="0",r.style.opacity="0",r.style.marginTop="0",r.classList.add("visible"),requestAnimationFrame(()=>{r.style.maxHeight=r.scrollHeight+"px",r.style.opacity="1",r.style.marginTop="24px"}))}Ft();M();function re(r){var e;const t=St();r&&(r.insertAdjacentHTML("beforeend",`
                 <div class="group__item_new">  
                     <div class="group__item">
-                        <input class="group__item_new__text placeholder="Введите название"/>
+                        <input class="group__item_new__text" placeholder="Введите название"/>
                         <button id="delete_${t}" class="btnDeleteGroup btn_delete">
                             <img src="/trash_gray.svg" alt="delete"/>
                         </button>
@@ -123,4 +123,4 @@ var Et=Object.defineProperty;var Ct=(r,t,e)=>t in r?Et(r,t,{enumerable:!0,config
         </div>
     </div>
 </dialog>
-`;document.querySelector("#app").insertAdjacentHTML("beforeend",he);const L=document.querySelector("#group__list");L&&vt(L);const W=document.querySelector("#btnAddGroup"),Z=document.querySelector("#btnSaveGroups"),X=document.querySelector("#closeGroupsDialog");W==null||W.addEventListener("click",()=>{re(L)});Z==null||Z.addEventListener("click",()=>{ue()&&L&&vt(L)});X==null||X.addEventListener("click",oe);window.addEventListener("resize",()=>{location.reload()});
+`;document.querySelector("#app").insertAdjacentHTML("beforeend",he);const L=document.querySelector("#group__list");L&&vt(L);const W=document.querySelector("#btnAddGroup"),Z=document.querySelector("#btnSaveGroups"),X=document.querySelector("#closeGroupsDialog");W==null||W.addEventListener("click",()=>{re(L)});Z==null||Z.addEventListener("click",()=>{ue()&&L&&vt(L)});X==null||X.addEventListener("click",oe);
